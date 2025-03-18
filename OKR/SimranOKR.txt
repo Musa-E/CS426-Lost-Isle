@@ -1,0 +1,8 @@
+Name: Simran Batra 
+Demo/Prototype Date: (3/19/2025)
+
+Planned Prototype/Demo Deliverable Contributions:
+
+1.  Level Design Mockup       - Monday  by 6pm (Estimate: 5 hours)
+2.  Health UI  - Tuesday by 11pm (Estimate: 1 hour)
+3.  Model 3D    - Tuesday by 11pm (Estimate: 2 hour)
