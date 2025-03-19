@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Fuel
   layers:
   - Default
   - TransparentFX
