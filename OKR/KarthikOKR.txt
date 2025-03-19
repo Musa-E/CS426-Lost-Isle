@@ -1,0 +1,13 @@
+Name: Karthik
+Demo/Prototype Date: (3/19/2025)
+
+Planned Prototype/Demo Deliverable Contributions:
+
+1.  Develop First-Person Character Movement/Implement movement using CharacterController
+Estimated Time: 6 hours
+
+2.  Build Inventory System/Implement mechanics to collect and store items
+Estimated Time: 6 hours
+
+3.  Implement Item Collection System/Create interactive objects such as fuel, oxygen, and food items
+Estimated Time: 7 hours
