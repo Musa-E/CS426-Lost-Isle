@@ -1,0 +1,8 @@
+Name: Musa Elqaq
+Demo/Prototype Date: (3/19/2025)
+
+Planned Prototype/Demo Deliverable Contributions:
+
+1.  Level Design Mockup                                                  - Monday  by 6pm (Estimate: 1 hours)
+2.  Basic Modeling/Sourcing (Find/Make models that can be used in-game)  - Tuesday by 11pm (Estimate: 3 hours)
+3.  Basic UI                                                             - Tuesday by 11pm (Estimate: 2 hour)
