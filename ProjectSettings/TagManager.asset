@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Fuel
   - Obstacles
+  - OxygenTank
   layers:
   - Default
   - TransparentFX

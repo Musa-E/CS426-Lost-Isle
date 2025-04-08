@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class OxygenSpawner : MonoBehaviour
 {
-    [SerializeField] private OxygenCounter oxygenCounter; // Ensure this is dragged from Inspector
-    public GameObject oxygenTankPrefab; // Prefab of the Oxygen Tank
+    [SerializeField] private OxygenCounter oxygenCounter;
+    public GameObject oxygenTankPrefab;
     public Transform player;
+    public PathFinder pathfinder; // Reference to your PathFinder script
+
     public float spawnRadius = 30f;
-    public float criticalOxygenLevel = 98f; // Testing high value to trigger spawning quickly
+    public float criticalOxygenLevel = 20f;
     public float minSpawnDistance = 10f;
     public float maxSpawnDistance = 25f;
 
@@ -24,14 +26,21 @@ public class OxygenSpawner : MonoBehaviour
 
         if (playerOxygen > criticalOxygenLevel)
         {
-            oxygenSpawned = false; // Reset to allow spawning when oxygen is low again
+            oxygenSpawned = false;
         }
     }
 
     private void SpawnOxygenTank()
     {
         Vector3 spawnPosition = GetRandomSpawnPosition();
-        Instantiate(oxygenTankPrefab, spawnPosition, Quaternion.identity);
+        GameObject spawnedTank = Instantiate(oxygenTankPrefab, spawnPosition, Quaternion.identity);
+
+        // Set the target in the PathFinder
+        pathfinder.SetCurrentTarget(spawnedTank.transform);
+
+        // Trigger Pathfinding
+        pathfinder.FindPath(player.position, spawnedTank.transform.position);
+
         Debug.Log("Oxygen Tank Spawned at: " + spawnPosition);
     }
 

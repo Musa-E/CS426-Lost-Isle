@@ -4,9 +4,14 @@ using System.Collections.Generic;
 public class PathFinder : MonoBehaviour
 {
     public GridManager gridManager;
+    public Transform player;
+    private Transform currentTarget;
+    private List<Node> currentPath; // Store the current path
 
     public List<Node> FindPath(Vector3 startPos, Vector3 targetPos)
     {
+        Debug.Log($"Finding path from {startPos} to {targetPos}");
+
         Node startNode = gridManager.NodeFromWorldPoint(startPos);
         Node targetNode = gridManager.NodeFromWorldPoint(targetPos);
 
@@ -27,7 +32,9 @@ public class PathFinder : MonoBehaviour
 
             if (currentNode == targetNode)
             {
-                return RetracePath(startNode, targetNode);
+                currentPath = RetracePath(startNode, targetNode); // Save the path
+                Debug.Log($"Path found with {currentPath.Count} nodes.");
+                return currentPath;
             }
 
             foreach (Node neighbor in gridManager.GetNeighbors(currentNode))
@@ -49,6 +56,8 @@ public class PathFinder : MonoBehaviour
             }
         }
 
+        Debug.Log("No path found.");
+        currentPath = null;
         return null;
     }
 
@@ -74,5 +83,50 @@ public class PathFinder : MonoBehaviour
         if (dstX > dstY)
             return 14 * dstY + 10 * (dstX - dstY);
         return 14 * dstX + 10 * (dstY - dstX);
+    }
+
+    public Transform FindClosestOxygenTank()
+    {
+        GameObject[] oxygenTanks = GameObject.FindGameObjectsWithTag("OxygenTank");
+
+        Transform closestTank = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (GameObject tank in oxygenTanks)
+        {
+            float distance = Vector3.Distance(player.position, tank.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                closestTank = tank.transform;
+            }
+        }
+
+        return closestTank;
+    }
+
+    public void SetCurrentTarget(Transform target)
+    {
+        currentTarget = target;
+    }
+
+    public Transform GetCurrentTarget()
+    {
+        return currentTarget;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (currentPath == null || currentPath.Count == 0) return;
+
+        Gizmos.color = Color.green;
+
+        for (int i = 0; i < currentPath.Count - 1; i++)
+        {
+            if (currentPath[i] != null && currentPath[i + 1] != null)
+            {
+                Gizmos.DrawLine(currentPath[i].worldPosition, currentPath[i + 1].worldPosition);
+            }
+        }
     }
 }

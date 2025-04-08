@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &288752222
 Transform:
   m_ObjectHideFlags: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
   oxygenLevelText: {fileID: 1920300954}
   oxygenLevel: 100
   RateOfO2Reduction: 1
-  timeToO2Reduction: 5
+  timeToO2Reduction: 2
 --- !u!114 &794893906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,8 +677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygenCounter: {fileID: 794893905}
-  oxygenTankPrefab: {fileID: 557461562}
+  oxygenTankPrefab: {fileID: 8464316943750299911, guid: ce94ca3d6f4368c4f8dc2534becb1f60, type: 3}
   player: {fileID: 592305733}
+  pathfinder: {fileID: 2144251718}
   spawnRadius: 30
   criticalOxygenLevel: 98
   minSpawnDistance: 10
@@ -2280,6 +2281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 2144251719}
+  player: {fileID: 592305733}
 --- !u!114 &2144251719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,7 +2298,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gridWorldSize: {x: 1000, y: 1000}
-  nodeRadius: 1
+  nodeRadius: 0.4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
