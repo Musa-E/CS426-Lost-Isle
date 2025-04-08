@@ -5,7 +5,8 @@ public class OxygenSpawner : MonoBehaviour
     [SerializeField] private OxygenCounter oxygenCounter;
     public GameObject oxygenTankPrefab;
     public Transform player;
-    public PathFinder pathfinder; // Reference to your PathFinder script
+    public PathFinder pathfinder;
+    public UIArrowIndicator uiArrowIndicator;
 
     public float spawnRadius = 30f;
     public float criticalOxygenLevel = 20f;
@@ -16,6 +17,12 @@ public class OxygenSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (oxygenCounter == null || pathfinder == null || uiArrowIndicator == null)
+        {
+            Debug.LogError("One or more required references are missing in the OxygenSpawner. Check Inspector settings.");
+            return;
+        }
+
         int playerOxygen = oxygenCounter.oxygenLevel;
 
         if (playerOxygen <= criticalOxygenLevel && !oxygenSpawned)
@@ -27,19 +34,25 @@ public class OxygenSpawner : MonoBehaviour
         if (playerOxygen > criticalOxygenLevel)
         {
             oxygenSpawned = false;
+            uiArrowIndicator.ClearTarget(); // Hide arrow when oxygen level is safe
         }
     }
 
     private void SpawnOxygenTank()
     {
+        if (pathfinder == null || uiArrowIndicator == null)
+        {
+            Debug.LogError("PathFinder or UIArrowIndicator reference is missing. Check Inspector settings.");
+            return;
+        }
+
         Vector3 spawnPosition = GetRandomSpawnPosition();
         GameObject spawnedTank = Instantiate(oxygenTankPrefab, spawnPosition, Quaternion.identity);
 
-        // Set the target in the PathFinder
         pathfinder.SetCurrentTarget(spawnedTank.transform);
-
-        // Trigger Pathfinding
         pathfinder.FindPath(player.position, spawnedTank.transform.position);
+
+        uiArrowIndicator.SetTarget(spawnedTank.transform); // Only show arrow when a tank is spawned
 
         Debug.Log("Oxygen Tank Spawned at: " + spawnPosition);
     }
