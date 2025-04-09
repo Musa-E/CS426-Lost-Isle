@@ -889,6 +889,7 @@ MonoBehaviour:
   oxygenCounter: {fileID: 794893905}
   flapAudio: {fileID: 1083221747}
   triggerThreshold: 98
+  flapAudioDuration: 8
 --- !u!82 &1083221747
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2600,7 +2601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unwalkableMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   gridWorldSize: {x: 1000, y: 1000}
   nodeRadius: 0.4
 --- !u!1660057539 &9223372036854775807
