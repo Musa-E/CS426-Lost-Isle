@@ -1,0 +1,11 @@
+Model Information:
+* title:	Loli Astronaut T-pose
+* source:	https://sketchfab.com/3d-models/loli-astronaut-t-pose-f27d92fd8b6f4ccc8827fdc3f81af473
+* author:	Algur (https://sketchfab.com/Algur)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Loli Astronaut T-pose" (https://sketchfab.com/3d-models/loli-astronaut-t-pose-f27d92fd8b6f4ccc8827fdc3f81af473) by Algur (https://sketchfab.com/Algur) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
