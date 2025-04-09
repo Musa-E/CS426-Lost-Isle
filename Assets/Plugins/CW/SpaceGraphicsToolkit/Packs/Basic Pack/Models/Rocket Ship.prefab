@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8937690999713561845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -710000, y: -300000000, z: 0}
+  m_LocalPosition: {x: -350000700, y: -348753760, z: -272225200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98,7 +98,7 @@ MonoBehaviour:
     GlobalX: 0
     GlobalY: 0
     GlobalZ: 0
-  expectedPosition: {x: -710000, y: -300000000, z: 0}
+  expectedPosition: {x: -350000700, y: -348753760, z: -272225200}
   expectedPositionSet: 1
   positionSet: 1
   seed: 0
