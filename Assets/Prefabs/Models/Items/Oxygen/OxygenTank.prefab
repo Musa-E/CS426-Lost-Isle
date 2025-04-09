@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6325534043160087698}
   - component: {fileID: 2483764261897631391}
   - component: {fileID: 6418479891660424408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2625004939054443796}
-  m_Layer: 0
+  - component: {fileID: 4231491972888095525}
+  - component: {fileID: 6183720674304427949}
+  m_Layer: 9
   m_Name: OxygenTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,3 +120,37 @@ Transform:
   - {fileID: 6325534043160087698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &4231491972888095525
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344114298711753480}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6183720674304427949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344114298711753480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb5342c27579a44eb07d40071825273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
