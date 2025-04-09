@@ -43,8 +43,8 @@ _The Lost Isle_ is a survival-exploration game where the player wakes up on a my
 • Watcher Idle + Movement (Simran):
   - Basic idle/move animations tied to Watcher AI.
 
-•  Jumping player (Simran) 
- - basica animination for player from mixamo 
+•  Jumping player (Simran & Musa) 
+ - basic animination for player from mixamo 
 
 • Idle player (Musa) 
  - basica animination for player from mixamo 
@@ -53,9 +53,9 @@ _The Lost Isle_ is a survival-exploration game where the player wakes up on a my
 
 🧪 Physics & Visual Effects:
 
-• Colliders & Triggers: Used for zone detection, proximity reactions, and tank collection logic.
-• Rigidbody (Musa): Physics-based reactions for oxygen tanks that bounce away.
-• Particle System (local only): Sparkle/energy glow for oxygen tanks tested but excluded from GitHub due to size.
+• Colliders & Triggers: Used for zone detection, proximity reactions, and tank collection logic.   
+• Rigidbody (Musa): Physics-based reactions for oxygen tanks that bounce away.   
+• Particle System (local only): Sparkle/energy glow for oxygen tanks tested but excluded from GitHub due to size.   
 
 ---
 
