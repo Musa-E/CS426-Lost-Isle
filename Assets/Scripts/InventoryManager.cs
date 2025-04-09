@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemTextObjects[tag] = uiText;
             inventory[tag] = 0;
-            UpdateInventoryUI(tag);
+            //UpdateInventoryUI(tag);
         }
     }
 
@@ -38,6 +38,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (inventory.ContainsKey(tag))
         {
+            Debug.Log("Item Collected");
             inventory[tag]++;
         }
         else

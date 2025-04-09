@@ -12,11 +12,10 @@ public class CollectibleItem : MonoBehaviour
             InventoryManager inventory = FindObjectOfType<InventoryManager>();
             if (inventory != null)
             {
+                GetComponent<Collider>().enabled = false; // Disable collider to prevent further triggers
                 inventory.AddItemByTag(gameObject.tag);
             }
-
             isCollected = true; // Mark item as collected
-            GetComponent<Collider>().enabled = false; // Disable collider to prevent further triggers
             Destroy(gameObject); // Destroy object after short delay
         }
     }
