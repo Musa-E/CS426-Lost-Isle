@@ -43,7 +43,13 @@ _The Lost Isle_ is a survival-exploration game where the player wakes up on a my
 • Watcher Idle + Movement (Simran):
   - Basic idle/move animations tied to Watcher AI.
 
----
+•  Jumping player (Simran) 
+ - basica animination for player from mixamo 
+
+• Idle player (Musa) 
+ - basica animination for player from mixamo 
+
+  ---
 
 🧪 Physics & Visual Effects:
 
