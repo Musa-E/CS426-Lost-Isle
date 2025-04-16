@@ -16,6 +16,10 @@ public class CharacterControllerFPS : MonoBehaviour
     private bool isGrounded;
     private float cameraPitch = 0f;
 
+    private OxygenCounter oxygenCounter;
+
+    public int O2Tank_refill_Amount = 10;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,6 +33,18 @@ public class CharacterControllerFPS : MonoBehaviour
         else
         {
             UnityEngine.Debug.LogError("No Main Camera found in the scene.");
+        }
+
+        GameObject oxygenManager = GameObject.Find("OxygenLevelManager");
+        if (oxygenManager != null)
+        {
+            oxygenCounter = oxygenManager.GetComponent<OxygenCounter>();
+            if (oxygenCounter == null)
+                Debug.LogError("OxygenCounter script not found on OxygenLevelManager.");
+        }
+        else
+        {
+            Debug.LogError("OxygenLevelManager GameObject not found in the scene.");
         }
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -86,6 +102,23 @@ public class CharacterControllerFPS : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("OxygenTank"))
+        {
+            Debug.Log("COLLISION WITH O2 TANK");
+    
+            // Handle updating values when contacting O2 tank
+            handleO2Collisions();
+
+            // Destroy the oxygen tank after pickup
+            Destroy(collision.gameObject);
+
+            /*
+                Found an issue:
+                If the amount the player gets back from an O2 tank is still below the critical amount,
+                another O2 tank will not spawn.  This means the player only gets one O2 tank, and no more.
+            */
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -93,6 +126,24 @@ public class CharacterControllerFPS : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void handleO2Collisions() {
+        
+        if (oxygenCounter != null) {
+            oxygenCounter.oxygenLevel += O2Tank_refill_Amount;
+
+            if (oxygenCounter.oxygenLevel > 100)
+                oxygenCounter.oxygenLevel = 100;
+
+            oxygenCounter.setOxygen(oxygenCounter.oxygenLevel);
+            // Since oxygenCounter.UpdateOxygenLevelText() is private, make sure to expose it if needed
+            // oxygenCounter.UpdateOxygenLevelText(oxygenCounter.oxygenLevel); ← only if you make it public
+        }
+        else
+        {
+            Debug.LogWarning("oxygenCounter reference not set.");
         }
     }
 }
