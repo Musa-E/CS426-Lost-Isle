@@ -14,7 +14,6 @@ public class CollectibleItem : MonoBehaviour
             {
                 GetComponent<Collider>().enabled = false; // Disable collider to prevent further triggers
                 inventory.AddItemByTag(gameObject.tag);
-                // Debug.Log("Collected a " + gameObject.tag + "tagged object.");
             }
             isCollected = true; // Mark item as collected
             Destroy(gameObject); // Destroy object after short delay
