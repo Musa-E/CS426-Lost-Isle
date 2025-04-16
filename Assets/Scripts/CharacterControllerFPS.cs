@@ -16,9 +16,13 @@ public class CharacterControllerFPS : MonoBehaviour
     private bool isGrounded;
     private float cameraPitch = 0f;
 
+    // References the oxygen manager's properties
     private OxygenCounter oxygenCounter;
 
     public int O2Tank_refill_Amount = 10;
+
+    public AudioClip oxygen_Refill_Sound;
+
 
     private void Start()
     {
@@ -110,8 +114,13 @@ public class CharacterControllerFPS : MonoBehaviour
             // Handle updating values when contacting O2 tank
             handleO2Collisions();
 
+            if (oxygen_Refill_Sound != null) {
+                // AudioSource audio = GetComponent<AudioSource>();
+                AudioSource.PlayClipAtPoint(oxygen_Refill_Sound, collision.transform.position);
+            }
+
             // Destroy the oxygen tank after pickup
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject, 0.2f);
 
             /*
                 Found an issue:
