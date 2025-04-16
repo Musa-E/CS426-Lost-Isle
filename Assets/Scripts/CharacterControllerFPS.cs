@@ -120,7 +120,7 @@ public class CharacterControllerFPS : MonoBehaviour
             }
 
             // Destroy the oxygen tank after pickup
-            Destroy(collision.gameObject, 0.2f);
+            Destroy(collision.gameObject);
 
             /*
                 Found an issue:
