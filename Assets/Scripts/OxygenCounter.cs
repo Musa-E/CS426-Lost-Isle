@@ -13,9 +13,14 @@ public class OxygenCounter : MonoBehaviour
     private float oxygenTimer;
     public int timeToO2Reduction = 1;
 
+    // For counting O2
+    private OxygenCounter counter;
+
     private void Start()
     {
         UpdateOxygenLevelText(oxygenLevel);
+
+        counter = GetComponent<OxygenCounter>();
         
         // Update the O2 UI
         setMaxOxygen(100);
