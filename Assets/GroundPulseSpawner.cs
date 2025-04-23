@@ -19,7 +19,7 @@ public class GroundPulseSpawner : MonoBehaviour
         pulseTimer += Time.deltaTime;
 
         // Only spawn pulse while player is grounded and moving
-        if (pulseTimer >= pulseInterval && IsGrounded() && rb.velocity.magnitude > 0.1f)
+        if (pulseTimer >= pulseInterval && IsGrounded() && rb.linearVelocity.magnitude > 0.1f)
         {
             Instantiate(pulsePrefab, groundSpawnPoint.position, Quaternion.identity);
             pulseTimer = 0f;
