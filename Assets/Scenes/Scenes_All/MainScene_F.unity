@@ -1613,7 +1613,7 @@ MonoBehaviour:
   pathfinder: {fileID: 2144251718}
   uiArrowIndicator: {fileID: 666105503}
   spawnRadius: 30
-  criticalOxygenLevel: 98
+  criticalOxygenLevel: 30
   minSpawnDistance: 10
   maxSpawnDistance: 25
 --- !u!114 &794893907
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygenCounter: {fileID: 794893905}
   breathingAudio: {fileID: 401768889}
-  oxygenThreshold: 98
+  oxygenThreshold: 30
 --- !u!114 &794893908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   oxygenCounter: {fileID: 794893905}
   blinkSpeed: 4
   maxAlpha: 0.4
-  criticalOxygen: 98
+  criticalOxygen: 30
 --- !u!1 &840963392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,7 +4181,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.06
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5059,9 +5059,9 @@ SceneRoots:
   - {fileID: 336276299}
   - {fileID: 2429113040818445558}
   - {fileID: 1679815683}
-  - {fileID: 1337022489}
   - {fileID: 1250129209}
   - {fileID: 794893904}
+  - {fileID: 1337022489}
   - {fileID: 2144251717}
   - {fileID: 288752222}
   - {fileID: 1505699824}
