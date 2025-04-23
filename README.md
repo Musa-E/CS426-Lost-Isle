@@ -24,10 +24,27 @@ _The Lost Isle_ is a survival-exploration game where the player wakes up on a my
   - Designed AI behavior for Oxygen Tanks using NavMesh.
   - Tanks actively move away from the player when approached and can only be collected after avoiding twice.
 
-• Karthik:
-  - Developed a custom A* pathfinding system from scratch.
-  - Built a dynamic oxygen detection system that spawns tanks and guides the player using a UI arrow when oxygen is low.
-  - Integrated the system with a Mecanim-triggered animation (wing flap) and synchronized an 8-second audio effect.
+• Karthik Ragi – Contributions
+
+Assignment 6: AI, Physics, and Mecanim
+- Implemented a custom pathfinding system using the A* algorithm to dynamically guide the player toward spawned oxygen tanks
+- Built the logic to spawn oxygen tanks based on critical oxygen levels, enhancing survival gameplay
+- Integrated the UI-based directional arrow system that responds to pathfinding updates
+- Contributed a wing-flap Mecanim animation that triggers when oxygen is low, paired with a synchronized sound effect
+- Handled AI logic, spawn behaviors, and interaction feedback using custom C# systems
+
+Assignment 7: UI, Sound, and Alpha Polish
+- Designed and implemented a red screen pulse UI when oxygen drops below threshold, creating immediate tension and feedback
+- Added a crosshair that follows the mouse for FPS aiming clarity
+- Integrated a low oxygen breathing sound effect tied to player status
+- Created and tested the UI fade-in screen effect at the start of the game for polish
+- Organized and contributed to Alpha feedback handling and helped with overall bug testing
+
+Assignment 8: Shader and Beta Release
+- Developed a toggleable flashlight system using a Spot Light, adding immersive visibility to the now-darkened game environment
+- Adjusted ambient lighting and directional light to create a survival atmosphere
+- Fixed visibility issues with the Watcher’s wings by adjusting material settings and lighting
+- Supported polish efforts with feedback-driven scene refinement and lighting enhancements
 
 ---
 
