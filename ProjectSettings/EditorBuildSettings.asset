@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MUSA-Scenes/menuScene/Menu.unity
+    guid: e7eb0bc180d7732419513bef17e5f327
+  - enabled: 1
+    path: Assets/Scenes/MUSA-Scenes/MusaScene.unity
+    guid: 1372b3ee6577a03488c1c21189a6cbc1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
