@@ -1,0 +1,94 @@
+2c3bcef7 Superkart Build Assignment 8
+8a91a535 Musa-E Created a working Build
+685fd40a Musa-E Fuel Canister Pulse Shader
+ceadb08b Musa-E Added a simple fade to intro
+bb6db04d Musa-E Minor Tweaks
+1730bb55 Musa-E Added Intro Text among other things
+06d0675e simiguess Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle
+6f21bef6 simiguess WIP
+bc1138aa Musa-E Updated to match Main
+88855517 Musa-E Added Menu, Credits, and Fixed O2 Bar
+c981cb54 Musa-E Added Main Menu and Credits
+634a26df Superkart Readme Contributions
+3d9f3cec Superkart imported changes for assignment 8 from karthik branch, flash light, scene dimming
+df210fe4 Superkart Changed scene names
+0943ced7 Superkart Added the flashlight toggle with the flash light to the player
+5c082957 Superkart Changed the scenes lighting and the lighting around the player
+2bcd5980 Superkart Imported the latest version of the game. The mainscene_F from the main branch
+60c58a6c Superkart Assignment 7 build
+24620d50 Musa-E Fixed Refill Sound
+10e78f07 Musa-E Added Refill Sounds
+47133d1a Superkart Integrated all the changes into mainscene_f and organised some folders
+300fb763 Musa-E Some Terrain Stuff
+6dc2643c Superkart Added audio for low oxygen breathing
+1819ceb3 Superkart Added Oxygen low UI blinker
+185e6dbf Superkart added a cross hair that follow the mouse
+98e65011 Musa-E Added Custom Tense Music
+f7cb3393 Musa-E Synced with main
+6d47f4c1 Musa-E Added O2 Tank Collisions and Found Error
+d908523a Musa-E Updated Various Elements from Musa Branch
+310334b5 Musa-E Moved O2 Text into graphic, fixed player camera
+b523be5a Musa-E Improved the Arrow Pointing to Oxygen
+bffbc39e Musa-E Added Improved Oxygen UI
+1934e166 Musa-E Updated to match Karthik's branch
+fcefc314 Superkart Imported the latest scene from main musa scene
+1128f47b Musa-E Added O2 UI
+aa7e0f01 Superkart Added build for assignemnt5
+7ed233e6 Superkart Added the build folder with assignment6 built
+dab3326a Musa-E Fixed Readme Grammar
+1fa72154 Simran Update README.md
+d59f581a Superkart Readme
+42c0526f Musa-E Not jumping
+ded18aab simiguess sims ai
+31ab574d Musa-E Updated Stuff
+2b089e8b Musa-E Update MusaScene.unity
+3c917171 Musa-E Working Stuff
+c7d54f8e Musa-E Backing up before particle system
+cb8d10da Musa-E New Player Model
+df3aeeab simiguess Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle
+0f9b5366 Musa-E Essentially merged Musa branch
+8bdc513e Musa-E Hopefully fixing git branch issue?
+30d3c8d2 Superkart Integrated karthik scene featues into main scene and added particle effect to the o2 tank
+bc70a8ef Musa-E Merge remote-tracking branch 'origin/main' into musa
+6374505f Musa-E Fix LFS pointer issues for texture files
+f4d8e366 Musa-E Updated Oxygen Tank and More
+10bd181e Musa-E Updated Oxygen Tank and More
+6c11cf78 Musa-E Old version?  Not sure, this was stashed though
+b73337ed Musa-E Updated Models And File Structure
+e82f6ba7 Musa-E Added Basic Animations
+a52518a8 Superkart Imported scene from karthik branch with new features to avoid merge conflict
+2fbee7a4 Superkart Implemented a wings flap mecanim when the oxygen is low with some sound
+ec4bd554 simiguess Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle
+c49dedcd Superkart Implemented the Ui for the pathfinding algorithm for the oxygentank
+abe47e1a Superkart Integrated the oxygen spawner with the pathfiner
+3cb78747 Superkart Implemented the oxygentank spawner based on player O2 level
+ca271c84 Superkart Implemented base pathfinder using a* and to test added visualizer
+d1cb0d39 Superkart Implemented the o2 timer reduction based with parameters of timefornextO2reduction and how much to reduce in each iteration reduction
+f7694403 Superkart  Fixed the oxygen tank counter bug
+a2db0f0b Musa-E Added AI Folders to Scenes and Scripts
+317739d1 Musa-E Backup version of project
+c858ce50 Superkart Readme
+d675f93a Superkart Manually merged changes from karthik branch to the main branch
+c49a7943 Superkart Moved fuel to test
+b19115fc Superkart Implemented basic inventory colleting system.
+b6d6d46d Musa-E Corrected Estimated Development Time For Karthik's OKR file
+a3f9007f Musa-E Added Karthik's OKR (Shortened Version) file
+881b012d Superkart Added ground tag to ground, added character controller script with jump feature
+f25bd24e Superkart Manually synced with the main branch
+13abf4d1 Musa-E Prototype Scene Finished
+58ba054e simiguess Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle
+9294557e simiguess OKR
+668b9483 Musa-E Updated Prototype Scene and OKR
+6b7da3f1 Musa-E Updated README includes unity version
+ade0dc48 Superkart Merging from main
+74676f1a Musa-E Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle
+51b85cee Musa-E Added Basic Prototype Scene
+08099a66 Musa-E Merge pull request #6 from Musa-E/musa
+036fcc31 Musa-E Added my OKR File because I forgot to add it.
+a94cf393 Superkart Created a Unity project and some folders for organising the project
+4f44eb2f Musa-E Added a little cube for scale
+7baf0ffb Musa-E Merge branch 'main' of https://github.com/Musa-E/CS426-Lost-Isle into musa
+c59c114e Musa-E Added Unity Files
+551649ee Superkart Added gitattributes file for Large files
+706488de Musa-E Init Commit
+a85cb7a2 Musa-E Initial commit
