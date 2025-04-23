@@ -1349,6 +1349,8 @@ MonoBehaviour:
   jumpForce: 10
   gravityScale: 1.5
   mouseSensitivity: 4
+  O2Tank_refill_Amount: 10
+  oxygen_Refill_Sound: {fileID: 0}
 --- !u!1 &666105499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygenLevelText: {fileID: 1920300954}
+  slider: {fileID: 871511927609931911}
   oxygenLevel: 100
   RateOfO2Reduction: 1
   timeToO2Reduction: 2
@@ -3982,6 +3985,8 @@ MonoBehaviour:
   jumpForce: 10
   gravityScale: 0.2
   mouseSensitivity: 2
+  O2Tank_refill_Amount: 10
+  oxygen_Refill_Sound: {fileID: 0}
 --- !u!54 &1811760655
 Rigidbody:
   m_ObjectHideFlags: 0
