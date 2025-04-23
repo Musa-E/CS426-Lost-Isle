@@ -1511,7 +1511,7 @@ MonoBehaviour:
   pathfinder: {fileID: 2144251718}
   uiArrowIndicator: {fileID: 666105503}
   spawnRadius: 30
-  criticalOxygenLevel: 98
+  criticalOxygenLevel: 90
   minSpawnDistance: 10
   maxSpawnDistance: 25
 --- !u!114 &794893907
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygenCounter: {fileID: 794893905}
   breathingAudio: {fileID: 401768889}
-  oxygenThreshold: 98
+  oxygenThreshold: 90
 --- !u!114 &794893908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   oxygenCounter: {fileID: 794893905}
   blinkSpeed: 4
   maxAlpha: 0.4
-  criticalOxygen: 98
+  criticalOxygen: 90
 --- !u!1 &840963392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,6 +3396,7 @@ GameObject:
   - component: {fileID: 1679815682}
   - component: {fileID: 1679815681}
   - component: {fileID: 1679815680}
+  - component: {fileID: 1679815684}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -3490,6 +3491,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1679815684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679815679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e64a059e5cebe7448ab2dac1b3e640f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introText: {fileID: 0}
+  displayTime: 10
+  fadeDuration: 2
 --- !u!1 &1735191399
 GameObject:
   m_ObjectHideFlags: 0
@@ -4650,7 +4666,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0

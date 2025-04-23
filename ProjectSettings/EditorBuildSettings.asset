@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MUSA-Scenes/menuScene/Menu.unity
+    path: Assets/Scenes/menuScene/Menu.unity
     guid: e7eb0bc180d7732419513bef17e5f327
   - enabled: 1
-    path: Assets/Scenes/MUSA-Scenes/MusaScene.unity
-    guid: 1372b3ee6577a03488c1c21189a6cbc1
+    path: Assets/Scenes/IntroScene.unity
+    guid: f49e388cd45b8e9468cd70720f3c651e
+  - enabled: 1
+    path: Assets/Scenes/Scenes_All/MainScene_F.unity
+    guid: ff48a6e74b8d0d9458dbd7094318093a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
