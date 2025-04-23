@@ -14,10 +14,10 @@ Shader "Custom/GrassCutout"
     {
         Tags { "Queue"="AlphaTest" "RenderType"="TransparentCutout" }
         LOD 200
-        Cull Back
+        Cull Off
 
         CGPROGRAM
-        #pragma surface surf Standard vertex:vert alpha:fade clip:_Cutoff
+        #pragma surface surf Standard vertex:vert alpha:fade clip:fade
 
         sampler2D _MainTex;
         fixed4 _RimColor;
