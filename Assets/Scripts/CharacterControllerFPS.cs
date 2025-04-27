@@ -4,9 +4,9 @@ using UnityEngine;
 public class CharacterControllerFPS : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 6.5f;
+    public float moveSpeed = 6f;
     public float jumpForce = 10f; // Increased jump force for better height
-    public float gravityScale = 1.5f; // Lowered gravity so jump lasts longer
+    public float gravityScale = 0.4f; // Lowered gravity so jump lasts longer
 
     [Header("Mouse Look Settings")]
     public float mouseSensitivity = 2f;
