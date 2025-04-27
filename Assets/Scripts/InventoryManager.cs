@@ -61,4 +61,11 @@ public class InventoryManager : MonoBehaviour
             Debug.LogError($"UI Text for '{tag}' is missing in itemTextObjects!");
         }
     }
+    public int GetItemCount(string tag)
+    {
+        if (inventory.ContainsKey(tag))
+            return inventory[tag];
+        return 0;
+    }
+
 }

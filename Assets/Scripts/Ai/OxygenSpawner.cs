@@ -61,7 +61,7 @@ public class OxygenSpawner : MonoBehaviour
     {
         Vector3 randomDirection = Random.insideUnitSphere * maxSpawnDistance;
         randomDirection += player.position;
-        randomDirection.y = player.position.y;
+        randomDirection.y = player.position.y + 20f;
 
         float distanceFromPlayer = Vector3.Distance(player.position, randomDirection);
 

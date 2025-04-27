@@ -30,4 +30,8 @@ public class UiManager2 : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void ShowGameWonPanel()
+    {
+        Debug.Log("Game Won!");
+    }
 }
