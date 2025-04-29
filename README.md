@@ -5,7 +5,8 @@ Team Members:
   - Musa Elqaq, 
   - Karthik Ragi
 
-**UNITY VERSION**: `6000.0.33f1`
+**UNITY VERSION**: `6000.0.33f1`   
+**Design Document**: [Link - must have access to view](https://docs.google.com/document/d/1v9vLBIsELQ7zh-CbmvK-6qBt1XS7PMMaMPOavaJecvk/edit?tab=t.0) 
 
 ----
 
