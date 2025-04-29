@@ -1,21 +1,31 @@
+# The Lost Isle
+
+Team Members:
+  - Simran Batra, 
+  - Musa Elqaq, 
+  - Karthik Ragi
+
 **UNITY VERSION**: `6000.0.33f1`
 
-# Version Info:
-The black hole is still a bit finicky.  I think this is because there are a lot of calculations being made, due to the lensing effect and the number of rings I added to make it look good.   
-My next commit aims to fix that by modifying the scripts used, like `SGTRing` and `SGTLens`, so hopefully the performance increases and the black holes stops flickering.
+----
 
-# The Lost Isle
-By: Simran Batra, Musa Elqaq, Karthik Ragi
+🎮 Overview:  
+_The Lost Isle_ is a survival-exploration game where the player wakes up on a mysterious and dangerous alien island after a crash landing. The player must explore the environment, manage oxygen levels, avoid a lurking entity called "The Watcher," and collect fuel to power their escape. As oxygen runs low, players must rely on visual cues, guidance systems, and environmental reactions to find nearby resources and survive.
 
 ----
-## Overview:
-This project...
 
-<<<<<<< Updated upstream
-## Requirements:
-Some requirements for this project include...
-=======
----
+## Controls:
+
+Movement:
+  - W
+  - A
+  - S
+  - D
+
+Utility:
+  - F
+
+----
 
 🧠 AI Systems (1 per team member):
 
@@ -27,12 +37,29 @@ Some requirements for this project include...
   - Designed AI behavior for Oxygen Tanks using NavMesh.
   - Tanks actively move away from the player when approached and can only be collected after avoiding twice.
 
-• Karthik:
-  - Developed a custom A* pathfinding system from scratch.
-  - Built a dynamic oxygen detection system that spawns tanks and guides the player using a UI arrow when oxygen is low.
-  - Integrated the system with a Mecanim-triggered animation (wing flap) and synchronized an 8-second audio effect.
+• Karthik Ragi – Contributions
 
----
+Assignment 6: AI, Physics, and Mecanim
+- Implemented a custom pathfinding system using the A* algorithm to dynamically guide the player toward spawned oxygen tanks
+- Built the logic to spawn oxygen tanks based on critical oxygen levels, enhancing survival gameplay
+- Integrated the UI-based directional arrow system that responds to pathfinding updates
+- Contributed a wing-flap Mecanim animation that triggers when oxygen is low, paired with a synchronized sound effect
+- Handled AI logic, spawn behaviors, and interaction feedback using custom C# systems
+
+Assignment 7: UI, Sound, and Alpha Polish
+- Designed and implemented a red screen pulse UI when oxygen drops below threshold, creating immediate tension and feedback
+- Added a crosshair that follows the mouse for FPS aiming clarity
+- Integrated a low oxygen breathing sound effect tied to player status
+- Created and tested the UI fade-in screen effect at the start of the game for polish
+- Organized and contributed to Alpha feedback handling and helped with overall bug testing
+
+Assignment 8: Shader and Beta Release
+- Developed a toggleable flashlight system using a Spot Light, adding immersive visibility to the now-darkened game environment
+- Adjusted ambient lighting and directional light to create a survival atmosphere
+- Fixed visibility issues with the Watcher’s wings by adjusting material settings and lighting
+- Supported polish efforts with feedback-driven scene refinement and lighting enhancements
+
+----
 
 🎞️ Mecanim Animations:
 
@@ -52,7 +79,7 @@ Some requirements for this project include...
 • Idle player (Musa) 
  - basica animination for player from mixamo 
 
-  ---
+----
 
 🧪 Physics & Visual Effects:
 
@@ -60,7 +87,7 @@ Some requirements for this project include...
 • Rigidbody (Musa): Physics-based reactions for oxygen tanks that bounce away.   
 • Particle System (local only): Sparkle/energy glow for oxygen tanks tested but excluded from GitHub due to size.   
 
----
+----
 
 💡 Lights & Textures:
 
@@ -68,7 +95,7 @@ Some requirements for this project include...
 - Materials and textures were applied to terrain, oxygen tanks, and the Watcher.
 - Some high-res terrain textures were excluded from version control due to GitHub's 100MB size limit.
 
----
+----
 
 📝 Notes:
 
@@ -76,7 +103,7 @@ Some requirements for this project include...
 - Terrain and large `.tif` textures were tested locally but not pushed to GitHub due to size constraints.
 - Git LFS was not enabled to maintain workflow consistency across the team.
 
----
+----
 
 📹 Demo Video:
 
@@ -86,30 +113,20 @@ A 3-minute demo video has been posted on Piazza, showcasing:
 - Tank avoidance and interaction
 - Animation triggers and UI feedback
 
----
+----
 
 ✅ Assignment Requirements Covered:
 
-**Karthik:**   
-**UI:** Added a centered crosshair using TextMeshPro for better aiming clarity.    
-**UI:** Implemented a red blinking screen overlay when oxygen is low for critical visual feedback.   
-**Sound:** Added a looping heavy breathing sound triggered when oxygen drops below 30%.   
-**Sound:** Integrated a flap sound effect synced with the Watcher’s wing animation.   
-**Testing:** Collected feedback during in-class playtest confirming UI clarity and sound effectiveness.   
+• ✔️ Three distinct AI constructs (Simran, Musa, Karthik)  
+• ✔️ Three Mecanim animations (Watcher wings, ambient animal, movement idle)  
+• ✔️ Three physics elements (colliders, rigidbody, particle FX [local])  
+• ✔️ Three lights + textured environment  
+• ✔️ Updated design and README with rationale and roles  
+• ✔️ <3-minute demo video submitted on Piazza
 
-**Musa:**   
-**UI:** Added a dynamic Oxygen bar to the user interface.    
-**UI:** Improved the arrow that points players to the spawned oxygen tanks.    
-**Sound:** Added ambient music to the scene.    
-**Sound:** Added a pickup sound when interacting with an oxygen tank.    
-**Testing:** Took notes on how players felt the movement impacted their experience, along with UI suggestions.    
-
----
+----
 
 📦 Final Summary:
 
 This assignment added gameplay logic and character behavior that reacts dynamically to player choices. From Watcher tension to oxygen desperation and resource tracking, each AI system builds on the survival-exploration theme while demonstrating technical variety and collaborative design.
->>>>>>> Stashed changes
 
-## Notes
-Some notes we have...
