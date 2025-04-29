@@ -36,10 +36,7 @@ public class CollectibleItem : MonoBehaviour
         }
         if(tag == "Fuel")
         {
-            if (!fuelAudio.isPlaying)
-            {
-                fuelAudio.Play();
-            }
+           fuelAudio.Play();
         }
     }
 }

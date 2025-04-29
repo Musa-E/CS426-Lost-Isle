@@ -31,7 +31,7 @@ public class UiManager2 : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void ShowGameWonPanel()
+    public void ShowGameWonPanel() ///////////////////// CODE HERE TO MAKE WINNING CONDTION /////////////////////////////////////////
     {
         Debug.Log("Game Won!");
     }
