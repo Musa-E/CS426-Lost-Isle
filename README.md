@@ -1,18 +1,43 @@
-README.txt - CS426 Assignment 6
-Project: The Lost Isle
-Unity Version: 6000.0.33f1
+# The Lost Isle
 
 Team Members:
-- Simran Batra
-- Musa Elqaq
-- Karthik Ragi (Graduate Student)
+  - Simran Batra, 
+  - Musa Elqaq, 
+  - Karthik Ragi
 
----
+**UNITY VERSION**: `6000.0.33f1`
+
+----
 
 🎮 Overview:  
 _The Lost Isle_ is a survival-exploration game where the player wakes up on a mysterious and dangerous alien island after a crash landing. The player must explore the environment, manage oxygen levels, avoid a lurking entity called "The Watcher," and collect fuel to power their escape. As oxygen runs low, players must rely on visual cues, guidance systems, and environmental reactions to find nearby resources and survive.
 
----
+----
+
+## Objective:
+
+Run around the map while avoiding the watcher.  Your main goal is to find the various fuel canisters (yellow cylinders) scattered around the map.
+Keep in mind the amount of oxygen you have while exploring.  Oxygen tanks will spawn near you when you reach critically low levels.
+
+----
+
+## Controls:
+
+### Movement:
+
+  | Keybind | Description |
+  | ------- | ----------- |
+  |    W    | Move Forward in the direction of the camera |
+  |    A    | Move Left from the direction of the camera |
+  |    S    | Move Backwards from the direction of the camera |
+  |    D    | Move Right from the direction of the camera |
+
+### Utility:
+  | Keybind | Description |
+  | ------- | ----------- |
+  |    F    | Toggle Flashlight |
+
+----
 
 🧠 AI Systems (1 per team member):
 
@@ -46,7 +71,7 @@ Assignment 8: Shader and Beta Release
 - Fixed visibility issues with the Watcher’s wings by adjusting material settings and lighting
 - Supported polish efforts with feedback-driven scene refinement and lighting enhancements
 
----
+----
 
 🎞️ Mecanim Animations:
 
@@ -66,7 +91,7 @@ Assignment 8: Shader and Beta Release
 • Idle player (Musa) 
  - basica animination for player from mixamo 
 
-  ---
+----
 
 🧪 Physics & Visual Effects:
 
@@ -74,7 +99,7 @@ Assignment 8: Shader and Beta Release
 • Rigidbody (Musa): Physics-based reactions for oxygen tanks that bounce away.   
 • Particle System (local only): Sparkle/energy glow for oxygen tanks tested but excluded from GitHub due to size.   
 
----
+----
 
 💡 Lights & Textures:
 
@@ -82,7 +107,7 @@ Assignment 8: Shader and Beta Release
 - Materials and textures were applied to terrain, oxygen tanks, and the Watcher.
 - Some high-res terrain textures were excluded from version control due to GitHub's 100MB size limit.
 
----
+----
 
 📝 Notes:
 
@@ -90,7 +115,7 @@ Assignment 8: Shader and Beta Release
 - Terrain and large `.tif` textures were tested locally but not pushed to GitHub due to size constraints.
 - Git LFS was not enabled to maintain workflow consistency across the team.
 
----
+----
 
 📹 Demo Video:
 
@@ -100,7 +125,7 @@ A 3-minute demo video has been posted on Piazza, showcasing:
 - Tank avoidance and interaction
 - Animation triggers and UI feedback
 
----
+----
 
 ✅ Assignment Requirements Covered:
 
@@ -111,7 +136,7 @@ A 3-minute demo video has been posted on Piazza, showcasing:
 • ✔️ Updated design and README with rationale and roles  
 • ✔️ <3-minute demo video submitted on Piazza
 
----
+----
 
 📦 Final Summary:
 
