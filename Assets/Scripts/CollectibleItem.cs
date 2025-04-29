@@ -4,8 +4,11 @@ public class CollectibleItem : MonoBehaviour
 {
     private bool isCollected = false; // Prevents multiple triggers
 
+    [SerializeField] private AudioSource oxygenAudio;
+    [SerializeField] private AudioSource fuelAudio;
     private void OnTriggerEnter(Collider other)
     {
+        PlaySounds(gameObject.tag);
         if (isCollected) return; // Ignore additional triggers
         if (other.CompareTag("Player"))
         {
@@ -18,6 +21,25 @@ public class CollectibleItem : MonoBehaviour
             }
             isCollected = true; // Mark item as collected
             Destroy(gameObject); // Destroy object after short delay
+        }
+    }
+
+
+    private void PlaySounds(string tag)
+    {
+        if(tag == "OxygenTank")
+        {
+            if (!oxygenAudio.isPlaying)
+            {
+                oxygenAudio.Play();
+            }
+        }
+        if(tag == "Fuel")
+        {
+            if (!fuelAudio.isPlaying)
+            {
+                fuelAudio.Play();
+            }
         }
     }
 }
