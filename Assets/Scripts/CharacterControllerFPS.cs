@@ -1,12 +1,13 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))] // Ensure there's an Animator
 public class CharacterControllerFPS : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 6f;
-    public float jumpForce = 10f; // Increased jump force for better height
-    public float gravityScale = 0.4f; // Lowered gravity so jump lasts longer
+    public float jumpForce = 10f;
+    public float gravityScale = 0.4f;
 
     [Header("Mouse Look Settings")]
     public float mouseSensitivity = 2f;
@@ -16,27 +17,28 @@ public class CharacterControllerFPS : MonoBehaviour
     private bool isGrounded;
     private float cameraPitch = 0f;
 
-    // References the oxygen manager's properties
+    // Animation reference
+    private Animator animator;
+
+    // Oxygen system
     private OxygenCounter oxygenCounter;
-
     public int O2Tank_refill_Amount = 10;
-
     public AudioClip oxygen_Refill_Sound;
-
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        // Automatically find and assign the Main Camera
+        animator = GetComponent<Animator>(); // Get the Animator
+
         if (Camera.main != null)
         {
             playerCamera = Camera.main.transform;
         }
         else
         {
-            UnityEngine.Debug.LogError("No Main Camera found in the scene.");
+            Debug.LogError("No Main Camera found in the scene.");
         }
 
         GameObject oxygenManager = GameObject.Find("OxygenLevelManager");
@@ -78,17 +80,31 @@ public class CharacterControllerFPS : MonoBehaviour
 
     private void HandleMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");
+       float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
+        // This line applies movement, but we should stop if no input:
         rb.linearVelocity = new Vector3(move.x * moveSpeed, rb.linearVelocity.y, move.z * moveSpeed);
 
-        // Jumping
+        // Only walk if actually pressing movement keys:
+        bool isWalking = move.magnitude > 0.1f;
+        animator.SetBool("isWalking", isWalking);
+        Debug.Log("isWalking = " + isWalking);
+ 
+
+        if (move.magnitude < 0.1f)
+{
+         rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f); // Stop movement
+}
+
+
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z); // Reset Y velocity before jumping
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange); // More natural jump force
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
     }
 
@@ -110,23 +126,15 @@ public class CharacterControllerFPS : MonoBehaviour
         if (collision.gameObject.CompareTag("OxygenTank"))
         {
             Debug.Log("COLLISION WITH O2 TANK");
-    
-            // Handle updating values when contacting O2 tank
+
             handleO2Collisions();
 
-            if (oxygen_Refill_Sound != null) {
-                // AudioSource audio = GetComponent<AudioSource>();
+            if (oxygen_Refill_Sound != null)
+            {
                 AudioSource.PlayClipAtPoint(oxygen_Refill_Sound, collision.transform.position);
             }
 
-            // Destroy the oxygen tank after pickup
             Destroy(collision.gameObject);
-
-            /*
-                Found an issue:
-                If the amount the player gets back from an O2 tank is still below the critical amount,
-                another O2 tank will not spawn.  This means the player only gets one O2 tank, and no more.
-            */
         }
     }
 
@@ -138,21 +146,23 @@ public class CharacterControllerFPS : MonoBehaviour
         }
     }
 
-    private void handleO2Collisions() {
-        
-        if (oxygenCounter != null) {
+    private void handleO2Collisions()
+    {
+        if (oxygenCounter != null)
+        {
             oxygenCounter.oxygenLevel += O2Tank_refill_Amount;
-
             if (oxygenCounter.oxygenLevel > 100)
                 oxygenCounter.oxygenLevel = 100;
 
             oxygenCounter.setOxygen(oxygenCounter.oxygenLevel);
-            // Since oxygenCounter.UpdateOxygenLevelText() is private, make sure to expose it if needed
-            // oxygenCounter.UpdateOxygenLevelText(oxygenCounter.oxygenLevel); ← only if you make it public
         }
         else
         {
             Debug.LogWarning("oxygenCounter reference not set.");
         }
     }
+
+
+
+
 }
