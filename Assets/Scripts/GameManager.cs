@@ -5,7 +5,9 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     public OxygenCounter oxygenCounter;
     public InventoryManager inventoryManager;
-    public UiManager2 uiManager; 
+    public UiManager2 uiManager;
+
+    public AudioSource deathAudio;
 
     [Header("Settings")]
     public int fuelNeededToWin = 3;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
         if (oxygenCounter != null && oxygenCounter.oxygenLevel <= 0)
         {
             Debug.Log("Player Died: Oxygen depleted.");
+            deathAudio.Play();
             gameEnded = true;
             uiManager.ShowGameLostPanel();
         }

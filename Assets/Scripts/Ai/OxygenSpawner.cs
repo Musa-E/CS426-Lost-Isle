@@ -9,7 +9,7 @@ public class OxygenSpawner : MonoBehaviour
     public UIArrowIndicator uiArrowIndicator;
 
     public float spawnRadius = 30f;
-    public float criticalOxygenLevel = 20f;
+    public float criticalOxygenLevel = 30f;
     public float minSpawnDistance = 10f;
     public float maxSpawnDistance = 25f;
 

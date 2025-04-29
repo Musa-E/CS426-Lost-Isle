@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class UiManager2 : MonoBehaviour
 {
     [SerializeField] private GameObject GameLostPanel;
+    [SerializeField] private GameObject GameWonPanel;
 
 
     private void Start()
     {
         GameLostPanel.SetActive(false);
+        GameWonPanel.SetActive(false);
     }
 
 
@@ -34,5 +36,7 @@ public class UiManager2 : MonoBehaviour
     public void ShowGameWonPanel() ///////////////////// CODE HERE TO MAKE WINNING CONDTION /////////////////////////////////////////
     {
         Debug.Log("Game Won!");
+        ShowMouseOnCanvas();
+        GameWonPanel.SetActive(true);
     }
 }

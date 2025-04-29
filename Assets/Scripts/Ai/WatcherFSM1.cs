@@ -6,6 +6,8 @@ public class WatcherFSM1 : MonoBehaviour
     private enum WatcherState { Idle, CloseToPlayer, KillPlayer }
     private WatcherState currentState = WatcherState.Idle;
 
+    [SerializeField] private GameManager gameManager;
+
     public Transform player;
     private NavMeshAgent agent;
 
@@ -84,6 +86,7 @@ public class WatcherFSM1 : MonoBehaviour
     private void KillPlayerBehavior()
     {
         Debug.Log("Player Killed by Watcher");
+        gameManager.deathAudio.Play();
         FindObjectOfType<UiManager2>().ShowGameLostPanel();
         Destroy(this.gameObject); // Watcher disappears after kill
     }
