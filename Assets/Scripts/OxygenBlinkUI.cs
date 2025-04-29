@@ -11,7 +11,8 @@ public class OxygenBlinkUI : MonoBehaviour
 
     // For playing the low O2 warning sound
     public AudioSource warningAudio;
-
+    public float warningVolume = .1f;    // Max volume when fully on
+    public float volumeFadeSpeed = 2.0f;  // How fast the volume fades
 
     public OxygenCounter oxygenCounter;
     public float blinkSpeed = 4f;
@@ -47,9 +48,13 @@ public class OxygenBlinkUI : MonoBehaviour
             // Update O2 Bar's Fill color to be RED when critical
             sliderFillImage.color = new Color(1f, 0f, 0f, originalFillColor.a);
 
+            // Start playing the low O2 warning sound
             if (!warningAudio.isPlaying) {
                 warningAudio.Play();
             }
+
+            // Fade volume UP smoothly to warningVolume
+            warningAudio.volume = Mathf.Lerp(warningAudio.volume, warningVolume, Time.deltaTime * volumeFadeSpeed);
         }
         else
         {
@@ -66,6 +71,11 @@ public class OxygenBlinkUI : MonoBehaviour
                 originalFillColor.a
             );  // #89D4FF
 
+
+            // Fade volume DOWN smoothly to 0
+            warningAudio.volume = Mathf.Lerp(warningAudio.volume, 0f, Time.deltaTime * volumeFadeSpeed);
+
+            // Stop playing the low O2 warning sound
             if (warningAudio.isPlaying) {
                 warningAudio.Stop();
             }
