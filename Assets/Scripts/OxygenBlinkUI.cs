@@ -4,6 +4,11 @@ using UnityEngine.UI;
 public class OxygenBlinkUI : MonoBehaviour
 {
     public Image warningImage;
+
+    public Image sliderFillImage;
+
+    private Color originalFillColor;
+
     public OxygenCounter oxygenCounter;
     public float blinkSpeed = 4f;
     public float maxAlpha = 0.4f;
@@ -11,6 +16,10 @@ public class OxygenBlinkUI : MonoBehaviour
 
     private float alpha = 0f;
     private bool fadeIn = true;
+
+    void Start() {
+        originalFillColor = sliderFillImage.color;
+    }
 
     void Update()
     {
@@ -30,6 +39,9 @@ public class OxygenBlinkUI : MonoBehaviour
 
             if (alpha >= maxAlpha) fadeIn = false;
             if (alpha <= 0f) fadeIn = true;
+
+            // Update O2 Bar's Fill color to be RED when critical
+            sliderFillImage.color = new Color(1f, 0f, 0f, originalFillColor.a);
         }
         else
         {
@@ -37,6 +49,15 @@ public class OxygenBlinkUI : MonoBehaviour
             Color c = warningImage.color;
             c.a = Mathf.Lerp(c.a, 0f, Time.deltaTime * blinkSpeed);
             warningImage.color = c;
+
+            // Reset O2 bar to normal color
+            sliderFillImage.color = new Color(
+                originalFillColor.r,
+                originalFillColor.g,
+                originalFillColor.b,
+                originalFillColor.a
+            );  // #89D4FF
+
         }
     }
 }
