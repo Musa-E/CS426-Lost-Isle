@@ -9,6 +9,10 @@ public class OxygenBlinkUI : MonoBehaviour
 
     private Color originalFillColor;
 
+    // For playing the low O2 warning sound
+    public AudioSource warningAudio;
+
+
     public OxygenCounter oxygenCounter;
     public float blinkSpeed = 4f;
     public float maxAlpha = 0.4f;
@@ -42,6 +46,10 @@ public class OxygenBlinkUI : MonoBehaviour
 
             // Update O2 Bar's Fill color to be RED when critical
             sliderFillImage.color = new Color(1f, 0f, 0f, originalFillColor.a);
+
+            if (!warningAudio.isPlaying) {
+                warningAudio.Play();
+            }
         }
         else
         {
@@ -57,6 +65,10 @@ public class OxygenBlinkUI : MonoBehaviour
                 originalFillColor.b,
                 originalFillColor.a
             );  // #89D4FF
+
+            if (warningAudio.isPlaying) {
+                warningAudio.Stop();
+            }
 
         }
     }
