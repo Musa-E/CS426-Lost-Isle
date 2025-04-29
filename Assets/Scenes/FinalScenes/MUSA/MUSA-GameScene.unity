@@ -1899,6 +1899,8 @@ MonoBehaviour:
   warningImage: {fileID: 467182548}
   sliderFillImage: {fileID: 5381441755467375873}
   warningAudio: {fileID: 794893909}
+  warningVolume: 0.1
+  volumeFadeSpeed: 2
   oxygenCounter: {fileID: 794893905}
   blinkSpeed: 4
   maxAlpha: 0.4
@@ -3579,8 +3581,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cc2e0c1ba0b7b3744875ac3725fe339d, type: 3}
-  m_Resource: {fileID: 8300000, guid: cc2e0c1ba0b7b3744875ac3725fe339d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ff566fbd003b77544903141e39980209, type: 3}
+  m_Resource: {fileID: 8300000, guid: ff566fbd003b77544903141e39980209, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
