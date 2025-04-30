@@ -52,5 +52,7 @@ public class FlashLightToggle : MonoBehaviour
                 isOn = false;
             }
         }
+
+
     }
 }
