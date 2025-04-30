@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
+  m_AmbientSkyColor: {r: 0.011703429, g: 0.011703429, b: 0.011703429, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1463,7 +1463,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87255941}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21867,7 +21867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygenCounter: {fileID: 794893905}
   oxygenTankPrefab: {fileID: 1497089375604705010, guid: f0c310421c9136940b92495b5a94e9d7, type: 3}
-  player: {fileID: 1209985090}
+  player: {fileID: 1478459888}
   pathfinder: {fileID: 2144251718}
   uiArrowIndicator: {fileID: 666105503}
   spawnRadius: 30
@@ -26410,7 +26410,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -31539,6 +31539,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471667008}
   m_CullTransparentMesh: 1
+--- !u!4 &1478459888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e72ba9e6fb7b401584607d54d405663, type: 3}
+  m_PrefabInstance: {fileID: 527584430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1484144472
 PrefabInstance:
   m_ObjectHideFlags: 0
