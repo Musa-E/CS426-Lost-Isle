@@ -3,6 +3,7 @@ using UnityEngine;
 public class FallOffDetector : MonoBehaviour
 {
     private UiManager2 uiManager;
+    [SerializeField] private AudioSource deathAudio;
     private void Start()
     {
         uiManager = FindObjectOfType<UiManager2>();
@@ -16,7 +17,19 @@ public class FallOffDetector : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            PlayDeathSound(collision.gameObject.tag);
             uiManager.ShowGameLostPanel();
         }
+    }
+    private void PlayDeathSound(string tag)
+    {
+        if (tag == "Player")
+        {
+            if (!deathAudio.isPlaying)
+            {
+                deathAudio.Play();
+            }
+        }
+
     }
 }

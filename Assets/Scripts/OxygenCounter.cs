@@ -11,7 +11,7 @@ public class OxygenCounter : MonoBehaviour
     public int oxygenLevel = 100;
     public float RateOfO2Reduction = 1f; 
     private float oxygenTimer;
-    public int timeToO2Reduction = 1;
+    public float timeToO2Reduction = 1;
 
     // For counting O2
     private OxygenCounter counter;

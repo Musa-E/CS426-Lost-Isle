@@ -4,8 +4,8 @@ Shader "Custom/GrassCutout"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Cutoff ("Alpha Cutoff", Range(0,1)) = 0.5
-        _RimColor ("Rim Color", Color) = (1,1,1,1)
-        _RimPower ("Rim Power", Range(0.5, 10)) = 3.0
+        // _RimColor ("Rim Color", Color) = (1,1,1,1)
+        // _RimPower ("Rim Power", Range(0, 10)) = 3.0
         _SwayStrength ("Sway Strength", Range(0, 0.5)) = 0.1
         _SwaySpeed ("Sway Speed", Range(0, 10)) = 1.5
     }
@@ -17,7 +17,8 @@ Shader "Custom/GrassCutout"
         Cull Off
 
         CGPROGRAM
-        #pragma surface surf Standard vertex:vert alpha:fade clip:fade
+        #pragma surface surf Standard vertex:vert alphatest:_Cutoff
+
 
         sampler2D _MainTex;
         fixed4 _RimColor;
@@ -44,9 +45,9 @@ Shader "Custom/GrassCutout"
             o.Albedo = c.rgb;
             o.Alpha = c.a;
 
-            float rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
-            rim = pow(rim, _RimPower);
-            o.Emission = rim * _RimColor.rgb;
+            // float rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
+            // rim = pow(rim, _RimPower);
+            // o.Emission = rim * _RimColor.rgb;
         }
         ENDCG
     }
