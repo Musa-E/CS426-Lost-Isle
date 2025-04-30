@@ -110,6 +110,15 @@ Assignment 8: Shader and Beta Release
 
 ----
 
+<img width="17" alt="The Code button's dropdown menu" src=image.png> - Shaders
+
+The shaders we implemented, among other things, are:
+  - Fuel Canister Pulse   
+  - Grass Swaying
+  - Flashlight 
+
+----
+
 📝 Notes:
 
 - The black hole environment uses custom shader rings and lensing which may cause minor flicker or GPU load spikes. Optimization is ongoing.
