@@ -6,6 +6,8 @@ public class WatcherFSM1 : MonoBehaviour
     public enum WatcherState { Idle, CloseToPlayer, KillPlayer }
     public WatcherState currentState = WatcherState.Idle;
 
+    public AudioSource watcherSound;
+
     [Header("References")]
     public Transform player;
     public GameManager gameManager;
@@ -21,6 +23,7 @@ public class WatcherFSM1 : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        watcherSound = GetComponent<AudioSource>();
 
         if (player == null)
             Debug.LogError("Player reference is missing on WatcherFSM1.");
@@ -54,7 +57,14 @@ public class WatcherFSM1 : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance <= detectionDistance)
         {
+            if (!watcherSound.isPlaying)
+                watcherSound.Play();
+
             currentState = WatcherState.CloseToPlayer;
+        }
+        if (distance > detectionDistance && watcherSound.isPlaying)
+        {
+            watcherSound.Stop(); // Cleanly stop the loop
         }
     }
 
