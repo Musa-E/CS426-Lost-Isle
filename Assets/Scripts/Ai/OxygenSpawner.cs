@@ -38,6 +38,11 @@ public class OxygenSpawner : MonoBehaviour
         }
     }
 
+    public void RespawnOneTank()
+    {
+        SpawnOxygenTank(1);
+    }
+
     private void SpawnOxygenTank(int count = 1)
     {
         if (pathfinder == null || uiArrowIndicator == null)
@@ -48,8 +53,14 @@ public class OxygenSpawner : MonoBehaviour
         for (int i = 0; i < count; i++)
     {
 
+
             Vector3 spawnPosition = GetRandomSpawnPosition();
             GameObject spawnedTank = Instantiate(oxygenTankPrefab, spawnPosition, Quaternion.identity);
+            OxygenTank ot = spawnedTank.GetComponent<OxygenTank>();
+            if (ot != null)
+            {
+                ot.spawner = this;
+            }
             if (i == 0)
         {
 
@@ -87,7 +98,7 @@ public class OxygenSpawner : MonoBehaviour
     for (int i = 0; i < maxAttempts; i++)
     {
         Vector3 randomDirection = Random.insideUnitSphere * maxSpawnDistance + player.position;
-        randomDirection.y = player.position.y + 4f;
+        randomDirection.y = player.position.y + 5f;
 
         float distanceFromPlayer = Vector3.Distance(player.position, randomDirection);
         if (distanceFromPlayer < minSpawnDistance)

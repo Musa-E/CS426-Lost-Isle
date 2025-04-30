@@ -12980,15 +12980,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e72ba9e6fb7b401584607d54d405663, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.792
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e72ba9e6fb7b401584607d54d405663, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 183.57
+      value: 179.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e72ba9e6fb7b401584607d54d405663, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.94
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e72ba9e6fb7b401584607d54d405663, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25602,7 +25602,7 @@ Transform:
   m_GameObject: {fileID: 1101614254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.4, y: 184.46, z: -3}
+  m_LocalPosition: {x: 314.84, y: 113.53, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26741,7 +26741,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 50, z: 0}
-  m_LocalScale: {x: 100000, y: 1, z: 100000}
+  m_LocalScale: {x: 10000, y: 1, z: 10000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -28858,7 +28858,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 1250129210}
   uiManager: {fileID: 203861116}
   deathAudio: {fileID: 657038231}
-  fuelNeededToWin: 2
+  fuelNeededToWin: 3
 --- !u!4 &1317408806
 Transform:
   m_ObjectHideFlags: 0
@@ -32607,7 +32607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' / 2'
+  m_text: ' / 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
