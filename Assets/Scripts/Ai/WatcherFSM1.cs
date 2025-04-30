@@ -3,36 +3,33 @@ using UnityEngine.AI;
 
 public class WatcherFSM1 : MonoBehaviour
 {
-    private enum WatcherState { Idle, CloseToPlayer, KillPlayer }
-    private WatcherState currentState = WatcherState.Idle;
+    public enum WatcherState { Idle, CloseToPlayer, KillPlayer }
+    public WatcherState currentState = WatcherState.Idle;
 
-    [SerializeField] private GameManager gameManager;
-
+    [Header("References")]
     public Transform player;
-    private NavMeshAgent agent;
+    public GameManager gameManager;
 
-    [Header("Watcher Settings")]
-    public float detectionDistance = 15f;
+    [Header("Parameters")]
+    public float detectionDistance = 30f;
     public float killDistance = 5f;
-    public float moveSpeed = 2f;
     public float timeToKill = 3f;
 
+    private NavMeshAgent agent;
     private float closeTimer = 0f;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = moveSpeed;
 
-        MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
-        foreach (var mesh in meshes)
-        {
-            mesh.enabled = false; // Hide Watcher
-        }
+        if (player == null)
+            Debug.LogError("Player reference is missing on WatcherFSM1.");
     }
 
     void Update()
     {
+        if (player == null || agent == null) return;
+
         switch (currentState)
         {
             case WatcherState.Idle:
@@ -45,30 +42,28 @@ public class WatcherFSM1 : MonoBehaviour
                 KillPlayerBehavior();
                 break;
         }
+
+        Debug.DrawLine(transform.position, GetProjectedPlayerPosition(), Color.red); // Visual debug
     }
 
+    // IDLE STATE
     private void IdleBehavior()
     {
-        if (player == null) return;
-
-        agent.SetDestination(player.position);
+        MoveToProjectedPlayer();
 
         float distance = Vector3.Distance(transform.position, player.position);
-
         if (distance <= detectionDistance)
         {
             currentState = WatcherState.CloseToPlayer;
         }
     }
 
+    // CLOSE STATE
     private void CloseToPlayerBehavior()
     {
-        if (player == null) return;
-
-        agent.SetDestination(player.position);
+        MoveToProjectedPlayer();
 
         float distance = Vector3.Distance(transform.position, player.position);
-
         if (distance <= killDistance)
         {
             closeTimer += Time.deltaTime;
@@ -79,15 +74,42 @@ public class WatcherFSM1 : MonoBehaviour
         }
         else
         {
-            closeTimer = 0f; // Reset if player escapes
+            closeTimer = 0f;
+
+            if (distance > detectionDistance)
+                currentState = WatcherState.Idle;
         }
     }
 
+    // KILL STATE
     private void KillPlayerBehavior()
     {
-        Debug.Log("Player Killed by Watcher");
-        gameManager.deathAudio.Play();
-        FindObjectOfType<UiManager2>().ShowGameLostPanel();
-        Destroy(this.gameObject); // Watcher disappears after kill
+        if (gameManager != null)
+        {
+            Debug.Log("Player Killed by Watcher");
+            gameManager.deathAudio.Play();
+            FindObjectOfType<UiManager2>().ShowGameLostPanel();
+            Destroy(this.gameObject); // Watcher disappears after kill
+
+        }
+        else
+        {
+            Debug.LogWarning("GameManager reference not set in WatcherFSM1.");
+        }
+
+        enabled = false; // Stop FSM after kill
+    }
+
+    // Move agent to player projected on plane height
+    private void MoveToProjectedPlayer()
+    {
+        Vector3 projectedPlayerPos = GetProjectedPlayerPosition();
+        agent.SetDestination(projectedPlayerPos);
+    }
+
+    // Get player position on the same Y height as Watcher
+    private Vector3 GetProjectedPlayerPosition()
+    {
+        return new Vector3(player.position.x, transform.position.y, player.position.z);
     }
 }
